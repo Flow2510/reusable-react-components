@@ -14,12 +14,24 @@ The goal is to improve my frontend skills through real UI reproduction.
 
 ---
 
+## ⚠️ Work in Progress
+
+This project is currently under active development.
+
+Some components are still being built, improved, or refactored, and the structure may evolve over time.
+
+The goal is not only to ship polished UI components, but also to experiment, learn, and iterate on architecture, animations, and interaction systems.
+
+Expect frequent updates and ongoing improvements.
+
+---
+
 ## 🎯 Objectives
 
-- Practice building reusable React components
-- Improve UI/UX understanding by recreating real interfaces
-- Work with SCSS architecture and styling organization
-- Build responsive and clean layouts
+* Practice building reusable React components
+* Improve UI/UX understanding by recreating real interfaces
+* Work with SCSS architecture and styling organization
+* Build responsive and clean layouts
 
 ---
 
@@ -27,17 +39,17 @@ The goal is to improve my frontend skills through real UI reproduction.
 
 This project includes (or will include):
 
-- Playground with reusable components
-- Vertical infinite carousel
-- Horizontal infinite carousel
+* Playground with reusable components
+* Vertical infinite carousel
+* Horizontal infinite carousel
 
 ---
 
 ## 🛠️ Tech Stack
 
-- React
-- JavaScript (ES6+)
-- SCSS
-- Vite
+* React
+* JavaScript (ES6+)
+* SCSS
+* Vite
 
 ---

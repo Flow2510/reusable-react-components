@@ -70,7 +70,7 @@ export default function VerticalCarousel(){
                                 src={image}
                                 className={`vertical-carousel__gallery-image vertical-carousel__gallery-image--${i + 1}`}
                                 initial={{ x: "100%", opacity: 0 }}
-                                animate={{ x: "0%", opacity: 1, transition: { delay: 0.5, duration: 0.4 } }}
+                                animate={{ x: "0%", opacity: 1, transition: { delay: i/10 , duration: 0.4 } }}
                                 exit={{ opacity: 0 }}
                                 transition={{ duration: 0.5, ease: "easeInOut" }}
                             />

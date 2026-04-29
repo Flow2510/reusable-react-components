@@ -1,47 +1,71 @@
 .horizontal-carousel{
-    height: 100dvh;
-    width: 100%;
-    display: flex;
-    align-items: flex-end;
     
     &__wrapper{
+        height: 100dvh;
+        width: 100%;
+        display: flex;
+        align-items: flex-end;
+        position: relative;
+    }
+    
+    &__gallery{
         display: flex;
         width: 100%;
-        height: 50dvh;
+        height: 100dvh;
         align-items: flex-end;
+    }
+
+    &__content{
+        position: absolute;
+        padding: 1rem;
+        top: 50%;
+        transform: translateY(-100%);
+        z-index: -1;
+
+        &-title{
+            font-size: 6rem;
+            display: flex;
+            flex-direction: column;
+            line-height: 80%;
+            text-transform: uppercase;
+
+            @media screen and (min-width:768px) {
+                font-size: 10rem;
+            }
+        }
+
+        &-text{
+            font-size: 2rem;
+            display: flex;
+            flex-direction: column;
+            line-height: 100%;
+            text-transform: uppercase;
+        }
     }
     
     &__item{
         transition: all 0.4s ease;
+        overflow: hidden;
+        aspect-ratio: 1;
 
         &--1{
             width: 8%;
-            aspect-ratio: 1;
-            background: aqua;
         }
 
         &--2{
             width: 12%;
-            aspect-ratio: 1;
-            background: rgb(21, 255, 0);
         }
 
         &--3{
             width: 20%;
-            aspect-ratio: 1;
-            background: rgb(25, 0, 255);
         }
 
         &--4{
             width: 25%;
-            aspect-ratio: 1;
-            background: rgb(255, 0, 191);
         }
 
         &--5{
             width: 35%;
-            aspect-ratio: 1;
-            background: rgb(255, 136, 0);
         }
 
         &-image{
