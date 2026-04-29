@@ -1,0 +1,42 @@
+[
+  {
+    "title": "Lorem ipsum",
+    "image1": "/public/images/la-night.jpg",
+    "image2": "/public/images/la-night2.jpg"
+  },
+  {
+    "title": "amet consectetur",
+    "image1": "/public/images/la-night2.jpg",
+    "image2": "/public/images/la-night.jpg"
+  },
+  {
+    "title": "adipisicing elit",
+    "image1": "/public/images/la-night.jpg",
+    "image2": "/public/images/la-night2.jpg"
+  },
+  {
+    "title": "Aliquid modi",
+    "image1": "/public/images/la-night2.jpg",
+    "image2": "/public/images/la-night.jpg"
+  },
+  {
+    "title": "ratione quas eius nobis",
+    "image1": "/public/images/la-night.jpg",
+    "image2": "/public/images/la-night2.jpg"
+  },
+  {
+    "title": "quis iure incidunt",
+    "image1": "/public/images/la-night2.jpg",
+    "image2": "/public/images/la-night.jpg"
+  },
+  {
+    "title": "iure incidunt",
+    "image1": "/public/images/la-night.jpg",
+    "image2": "/public/images/la-night2.jpg"
+  },
+  {
+    "title": "dolor consectetur",
+    "image1": "/public/images/la-night2.jpg",
+    "image2": "/public/images/la-night.jpg"
+  }
+]

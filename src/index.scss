@@ -1,0 +1,15 @@
+*{
+  margin: 0;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: "MangoGrotesque";
+  src: url("./assets/fonts/MangoGrotesque-VF.ttf") format("truetype");
+  font-weight: 100 900;
+  font-style: normal;
+}
+
+body {
+  font-family: "MangoGrotesque", sans-serif;
+}
