@@ -1,8 +1,10 @@
 import './scalegallery.scss';
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 import { motion, useScroll, useTransform } from 'motion/react';
 
 export default function ScaleGallery() {
+    const [isDesktop, setIsDesktop] = useState(window.innerWidth > 768)
+
     const items = [
         '/public/images/flou-bleu.jpg',
         '/public/images/la-night.jpg',
@@ -14,13 +16,60 @@ export default function ScaleGallery() {
     const itemsList = [...items, ...items]
     const scrollRef = useRef();
 
-    const getRandomPosition = () => Math.floor(Math.random() * (65 - 5) ) + 5;
-    const getRandomWidth = () => Math.floor(Math.random() * (350 - 300) ) + 300;
+    const getRandomWidth = () => 
+        isDesktop? 
+            Math.floor(Math.random() * (400 - 300) ) + 300
+        :
+            Math.floor(Math.random() * (250 - 150) ) + 150    
+    ;
 
     const { scrollYProgress: progressA } = useScroll({
         target: scrollRef,
         offset: ["start start", "end end"]
     })
+
+    const positionList = [
+        {
+            top: 10,
+            left: 30
+        },
+        {
+            top: 60,
+            left: 60
+        },
+        {
+            top: 40,
+            left: 10
+        },
+        {
+            top: 25,
+            left: 50
+        },
+        {
+            top: 10,
+            left: 5
+        },
+        {
+            top: 60,
+            left: 70
+        },
+        {
+            top: 10,
+            left: 70
+        },
+        {
+            top: 40,
+            left: 40
+        },
+        {
+            top: 70,
+            left: 15
+        },
+        {
+            top: 25,
+            left: 15
+        }
+    ]
 
     const opacityList = [
         useTransform(progressA, [0, 0.15, 0.3, 0.45], [0, 1, 1, 0]),
@@ -29,8 +78,8 @@ export default function ScaleGallery() {
         useTransform(progressA, [0.3, 0.45, 0.6, 0.75], [0, 1, 1, 0]),
         useTransform(progressA, [0.4, 0.55, 0.7, 0.85], [0, 1, 1, 0]),
         useTransform(progressA, [0.5, 0.65, 0.8, 0.9], [0, 1, 1, 0]),
-        useTransform(progressA, [0.6, 0.75, 0.85, 1], [0, 1, 1, 0]),
-        useTransform(progressA, [0.65, 0.8, 0.95, 1], [0, 1, 1, 0]),
+        useTransform(progressA, [0.6, 0.75, 0.85, 0.95], [0, 1, 1, 0]),
+        useTransform(progressA, [0.65, 0.8, 0.90, 0.95], [0, 1, 1, 0]),
         useTransform(progressA, [0.7, 0.8, 0.9, 1], [0, 1, 1, 0]),
         useTransform(progressA, [0.75, 0.85, 0.95, 1], [0, 1, 1, 0]),
     ];
@@ -51,12 +100,10 @@ export default function ScaleGallery() {
     return(
         <section className='scale-gallery' ref={scrollRef}>
             <div className='scale-gallery__content'>
-                <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus, nihil voluptatibus esse ratione provident accusamus.</h2>
-                <h2>Iure modi, praesentium harum officiis culpa recusandae numquam optio ea dignissimos odit adipisci tenetur ipsum?</h2>
+                <h2>Scroll Driven Gallery</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis sed expedita inventore natus nulla? Non!</p>
                 <div className='scale-gallery__wrapper'>
                     {itemsList.map((item, index) => {
-                        const left = getRandomPosition();
-                        const top = getRandomPosition();
                         const width = getRandomWidth();
 
                         return (
@@ -65,8 +112,8 @@ export default function ScaleGallery() {
                                 className='scale-gallery__item'
                                 style={{ 
                                     width: `${width}px`,
-                                    left: `${left}%`,
-                                    top: `${top}%`,
+                                    left: `${positionList[index].left}%`,
+                                    top: `${positionList[index].top}%`,
                                     opacity: opacityList[index],
                                     scale: scaleList[index]
                                 }}

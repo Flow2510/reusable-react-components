@@ -12,5 +12,12 @@
 
 body {
   font-family: "MangoGrotesque", sans-serif;
-  background: #fafafa;
+  background: #f3f3f3;
+  color: #202020;
+}
+
+html{
+   @media screen and (min-width: 768px) {
+    font-size: 18px;
+   }
 }
