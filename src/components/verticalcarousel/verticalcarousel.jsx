@@ -32,9 +32,9 @@ export default function VerticalCarousel(){
     });
 
     const images = [
-        '/public/images/flou-bleu.jpg',
-        '/public/images/flou-gray.jpg',
-        '/public/images/flou-violet.jpg'
+        '/images/flou-bleu.jpg',
+        '/images/flou-gray.jpg',
+        '/images/flou-violet.jpg'
     ]
 
     return(
@@ -48,17 +48,17 @@ export default function VerticalCarousel(){
                         const isActive = item.offset === 0;
 
                         return (
-                        <button
-                            key={`${item.realIndex}-${item.offset}`}
-                            onClick={() => setActiveIndex(item.realIndex)}
-                            className={`vertical-carousel__nav-button${
-                                isActive
-                                    ? " vertical-carousel__nav-button--active"
-                                    : ""
-                            }`}
-                        >
-                            <h2>{item.title}</h2>
-                        </button>
+                            <button
+                                key={`${item.realIndex}-${item.offset}`}
+                                onClick={() => setActiveIndex(item.realIndex)}
+                                className={`vertical-carousel__nav-button${
+                                    isActive
+                                        ? " vertical-carousel__nav-button--active"
+                                        : ""
+                                }`}
+                            >
+                                <h2>{item.title}</h2>
+                            </button>
                         );
                     })}
                 </nav>

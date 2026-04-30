@@ -30,6 +30,10 @@
             &--active{
                 text-decoration: underline;
             }
+
+            &:hover{
+                scale: 1.05;
+            }
         }
     }
 
