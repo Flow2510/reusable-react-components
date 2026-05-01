@@ -10,6 +10,20 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: "Zalando";
+  src: url("./assets/fonts/ZalandoSans[wdth\,wght\,slnt].ttf") format("truetype");
+  font-weight: 100 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Mosvita";
+  src: url("./assets/fonts/mosvita-vf.ttf") format("truetype");
+  font-weight: 100 900;
+  font-style: normal;
+}
+
 body {
   font-family: "MangoGrotesque", sans-serif;
   background: #f3f3f3;

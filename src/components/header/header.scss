@@ -1,10 +1,17 @@
 .header{
     padding: 1rem;
+    z-index: 100;
+    color: white;
+    mix-blend-mode: difference;
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    z-index: 100;
+
+    h1{
+        letter-spacing: 2px;
+        text-transform: uppercase;
+    }
 
     &__wrapper{
         display: flex;
@@ -49,6 +56,11 @@
     display: flex;
     justify-content: space-between;
     padding: 4.5rem 1rem 1rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #f3f3f3;
 
     &__link{
         color: inherit;
@@ -66,6 +78,5 @@
         width: 100%;
         top: 0;
         z-index: 50;
-        background: #f3f3f3;
     }
 }

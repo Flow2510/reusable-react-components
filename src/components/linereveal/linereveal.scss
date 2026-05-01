@@ -1,0 +1,9 @@
+.line-reveal{
+    display: inline-block;
+    overflow: hidden;
+    transform-origin: bottom;
+
+    &__wrapper{
+        display: inline-block;
+    }
+}

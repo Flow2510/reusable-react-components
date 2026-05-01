@@ -20,6 +20,8 @@ This project is currently under active development.
 
 Some components are still being built, improved, or refactored, and the structure may evolve over time.
 
+This project uses minimal CSS and is primarily focused on learning and experimenting with animations.
+
 The goal is not only to ship polished UI components, but also to experiment, learn, and iterate on architecture, animations, and interaction systems.
 
 Expect frequent updates and ongoing improvements.

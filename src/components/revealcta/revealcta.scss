@@ -1,0 +1,35 @@
+.reveal-cta{
+    position: relative;
+    background: #202020;
+    color: #f3f3f3;
+    padding: 5rem 0;
+    
+    &__content{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        h2{
+            text-align: center;
+            font-size: 6rem;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            text-transform: uppercase;
+
+            @media screen and (min-width:768px) {
+                font-size: 8rem;
+            }
+        }
+    }
+
+    &__overlay{
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        background: #202020ce;
+        transform-origin: bottom;
+        z-index: 10;
+    }
+}
