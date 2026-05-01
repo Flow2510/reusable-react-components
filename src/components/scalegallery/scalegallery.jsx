@@ -23,7 +23,7 @@ export default function ScaleGallery() {
             Math.floor(Math.random() * (250 - 150) ) + 150    
     ;
 
-    const { scrollYProgress: progressA } = useScroll({
+    const { scrollYProgress } = useScroll({
         target: scrollRef,
         offset: ["start start", "end end"]
     })
@@ -71,35 +71,40 @@ export default function ScaleGallery() {
         }
     ]
 
-    const opacityList = [
-        useTransform(progressA, [0, 0.15, 0.3, 0.45], [0, 1, 1, 0]),
-        useTransform(progressA, [0.08, 0.2, 0.4, 0.55], [0, 1, 1, 0]),
-        useTransform(progressA, [0.2, 0.35, 0.5, 0.65], [0, 1, 1, 0]),
-        useTransform(progressA, [0.3, 0.45, 0.6, 0.75], [0, 1, 1, 0]),
-        useTransform(progressA, [0.4, 0.55, 0.7, 0.85], [0, 1, 1, 0]),
-        useTransform(progressA, [0.5, 0.65, 0.8, 0.9], [0, 1, 1, 0]),
-        useTransform(progressA, [0.6, 0.75, 0.85, 0.95], [0, 1, 1, 0]),
-        useTransform(progressA, [0.65, 0.8, 0.90, 0.95], [0, 1, 1, 0]),
-        useTransform(progressA, [0.7, 0.8, 0.9, 1], [0, 1, 1, 0]),
-        useTransform(progressA, [0.75, 0.85, 0.95, 1], [0, 1, 1, 0]),
+    const scaleList = [
+        useTransform(scrollYProgress, [0, 0.08, 0.2, 0.28], [0, 1, 1, 0]),
+        useTransform(scrollYProgress, [0.09, 0.17, 0.29, 0.37], [0, 1, 1, 0]),
+        useTransform(scrollYProgress, [0.19, 0.27, 0.39, 0.47], [0, 1, 1, 0]),
+        useTransform(scrollYProgress, [0.27, 0.35, 0.47, 0.55], [0, 1, 1, 0]),
+        useTransform(scrollYProgress, [0.37, 0.45, 0.57, 0.65], [0, 1, 1, 0]),
+        useTransform(scrollYProgress, [0.44, 0.52, 0.64, 0.72], [0, 1, 1, 0]),
+        useTransform(scrollYProgress, [0.54, 0.62, 0.74, 0.82], [0, 1, 1, 0]),
+        useTransform(scrollYProgress, [0.62, 0.7, 0.82, 0.9], [0, 1, 1, 0]),
+        useTransform(scrollYProgress, [0.7, 0.78, 0.9, 0.98], [0, 1, 1, 0]),
+        useTransform(scrollYProgress, [0.78, 0.86, 0.94, 1], [0, 1, 1, 0]),
     ];
 
-    const scaleList = [
-        useTransform(progressA, [0, 0.15, 0.3, 0.45], [0, 1, 1, 0]),
-        useTransform(progressA, [0.08, 0.2, 0.4, 0.55], [0, 1, 1, 0]),
-        useTransform(progressA, [0.2, 0.35, 0.5, 0.65], [0, 1, 1, 0]),
-        useTransform(progressA, [0.3, 0.45, 0.6, 0.75], [0, 1, 1, 0]),
-        useTransform(progressA, [0.4, 0.55, 0.7, 0.85], [0, 1, 1, 0]),
-        useTransform(progressA, [0.5, 0.65, 0.8, 0.9], [0, 1, 1, 0]),
-        useTransform(progressA, [0.6, 0.75, 0.85, 1], [0, 1, 1, 0]),
-        useTransform(progressA, [0.65, 0.8, 0.95, 1], [0, 1, 1, 0]),
-        useTransform(progressA, [0.7, 0.8, 0.9, 1], [0, 1, 1, 0]),
-        useTransform(progressA, [0.75, 0.85, 0.95, 1], [0, 1, 1, 0]),
-    ]
+    const opacityList = [
+        useTransform(scrollYProgress, [0.2, 0.28], [1, 0]),
+        useTransform(scrollYProgress, [0.29, 0.37], [1, 0]),
+        useTransform(scrollYProgress, [0.39, 0.47], [1, 0]),
+        useTransform(scrollYProgress, [0.47, 0.55], [1, 0]),
+        useTransform(scrollYProgress, [0.57, 0.65], [1, 0]),
+        useTransform(scrollYProgress, [0.64, 0.72], [1, 0]),
+        useTransform(scrollYProgress, [0.74, 0.82], [1, 0]),
+        useTransform(scrollYProgress, [0.82, 0.9], [1, 0]),
+        useTransform(scrollYProgress, [0.9, 0.98], [1, 0]),
+        useTransform(scrollYProgress, [0.94, 1], [1, 0]),
+    ];
 
     return(
         <section className='scale-gallery' ref={scrollRef}>
-            <div className='scale-gallery__content'>
+            <motion.div 
+                initial={{ scale: 0 }}
+                animate={{ scale: 1 }}
+                transition={{ type: "tween"}}
+                className='scale-gallery__content'
+            >
                 <h2>Scroll Driven Gallery</h2>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis sed expedita inventore natus nulla? Non!</p>
                 <div className='scale-gallery__wrapper'>
@@ -108,23 +113,22 @@ export default function ScaleGallery() {
 
                         return (
                             <motion.div 
-
                                 className='scale-gallery__item'
                                 style={{ 
                                     width: `${width}px`,
                                     left: `${positionList[index].left}%`,
-                                    top: `${positionList[index].top}%`,
-                                    opacity: opacityList[index],
+                                    top: `${positionList[index].top}%`,       
+                                    opacity: opacityList[index],                          
                                     scale: scaleList[index]
                                 }}
                                 key={item + index}
                             >
-                                <img src={item} alt="" />
+                                <img src={item} alt=""/>
                             </motion.div>
                         )
                     })}
                 </div>
-            </div>
+            </motion.div>
         </section>
     )
 }

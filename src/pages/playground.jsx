@@ -1,3 +1,5 @@
+import HorizontalSlider from "../components/horizontalslider/horizontalslider";
+import ImageParallax from "../components/imageparallax/imageparallax";
 import List from "../components/list/list";
 import RevealCta from "../components/revealcta/revealcta";
 import ScaleGallery from "../components/scalegallery/scalegallery";
@@ -10,7 +12,8 @@ export default function Playground(){
             <RevealCta />
             <TextSection />
             <List />
-            <RevealCta />
+            <ImageParallax />
+            <HorizontalSlider />
         </main>
     )
 }

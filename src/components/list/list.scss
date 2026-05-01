@@ -10,7 +10,7 @@
 
     @media screen and (min-width: 768px) {
         flex-direction: row;
-        border-top: 1px solid;
+        border-top: 1px solid #2020204d;
 
         &--1{
             position: sticky;
@@ -30,6 +30,7 @@
         &--4{
             position: sticky;
             top: 16.1rem;
+            border-bottom: 1px solid #2020204d;
         }
     }
 
@@ -41,7 +42,7 @@
         @media screen and (min-width: 768px){
             border: none;
             width: 60%;
-            border-right: 1px solid;
+            border-right: 1px solid #2020204d; 
         }
 
         p{
@@ -83,6 +84,13 @@
             color: inherit;
             display: flex;
             align-items: center;
+            transition: all 0.3s ease-in-out;
+
+            &:hover{
+                background: #202020;
+                border-color: #f3f3f3;
+                color: #f3f3f3;
+            }
             
             span{
                 padding: 0.2rem 0.5rem;

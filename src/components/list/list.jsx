@@ -1,6 +1,8 @@
 import { text, title } from "motion/react-client"
 import './list.scss'
 import { NavLink } from "react-router-dom"
+import MaskReveal from "../maskreveal/maskreveal"
+import HoverButton from "../hoverbutton/hoverbutton"
 
 export default function List() {
     const items = [
@@ -39,10 +41,15 @@ export default function List() {
                             <p>0{i + 1} /</p>
                         </div>
                         <div className="list-item__content">
-                            <p className="list-item__content-subtitle">{item.subtitle}</p>
+                            <p className="list-item__content-subtitle">
+                                <MaskReveal 
+                                    text={item.subtitle}    
+                                    backgroundColor={"#202020"}                            
+                                />
+                            </p>
                             <h3 className="list-item__content-title">{item.title}</h3>
                             <p className="list-item__content-text">{item.text}</p>
-                            <NavLink className="list-item__content-link" to={'/'}><span className="list-item__link-text">Link text</span><span className="list-item__link-arrow">→</span></NavLink>
+                            <HoverButton />
                         </div>
                         <div className="list-item__image-wrapper">
                             <img className="list-item__image" src={item.image} alt="" />

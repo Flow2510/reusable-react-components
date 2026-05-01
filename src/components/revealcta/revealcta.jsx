@@ -23,7 +23,7 @@ export default function RevealCta() {
                     <span>Simple CTA</span> 
                     <span>with</span> 
                     <span>scroll driven</span>
-                    <span>text reveal</span> 
+                    <span>text opacity reveal</span> 
                 </h2>
             </div>
         </section>

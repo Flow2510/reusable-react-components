@@ -1,0 +1,87 @@
+.hover-button{
+    display: flex;
+    border: 1px solid #202020;
+    text-decoration: none;
+    color: initial;
+    align-items: center;
+    width: fit-content;
+
+    &:hover{
+
+        .hover-button__text-wrapper{
+            background: #202020;
+        }
+
+        .hover-button__text{
+            transform: translateY(-100%);
+        }  
+
+        .hover-button__arrow{
+            transform: translateX(0);
+        } 
+    }
+
+    &__text{
+        height: 35px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0 0.5rem;
+        transition: all 0.1s ease-in-out;
+        width: fit-content;
+
+        &--initial{
+            height: 35px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        &--hovered{
+            color: #f3f3f3;
+        }
+
+        &-wrapper{
+            position: relative;
+            height: 35px;
+            overflow: hidden;
+            width: 150px;
+        }
+    }
+
+    &__border{
+        width: 1px;
+        height: 35px;
+        background: #202020;
+    }
+
+    &__arrow{
+        height: 35px;
+        transform: translateX(-100%);
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        padding: 0 0.5rem;
+        transition: transform 0.1s ease-in-out;
+
+        &--initial{
+            height: 35px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        &--hovered{
+            background: rgb(255, 89, 73);
+        }
+
+        &-wrapper{
+            position: relative;
+            height: 35px;
+            display: flex;
+            width: 35px;
+            overflow: hidden;
+        }
+    }
+}

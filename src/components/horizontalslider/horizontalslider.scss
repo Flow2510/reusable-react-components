@@ -1,0 +1,14 @@
+.horizontal-slider{
+    height: 100vh;
+    padding: 2.5rem 1rem;
+
+    &__content{
+        padding: 1rem;
+
+        h2{
+            font-size: 4rem;
+            width: fit-content;
+            text-transform: uppercase;
+        }
+    }
+}
